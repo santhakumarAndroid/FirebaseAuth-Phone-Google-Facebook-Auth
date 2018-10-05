@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/phoneAuth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="16dp"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone number"
+                android:textSize="18dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:ccp_defaultNameCode="INDIA"/>
+
+                <EditText
+                    android:id="@+id/phonenumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="number"
+                    android:inputType="phone"
+                    android:singleLine="true"/>
+
+                </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/sendotp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="send Otp"
+        android:padding="10dp"
+        android:onClick="sendOtp"
+        android:textSize="20dp"
+        android:layout_below="@+id/phoneAuth"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/holo_green_light"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/resend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resend-Otp"
+        android:textSize="20dp"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/sendotp"
+        android:onClick="resendOtp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"/>
+
+    <EditText
+        android:id="@+id/code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="47dp"
+        android:ems="10"
+        android:hint="Code"
+        android:inputType="number"
+        android:layout_below="@+id/resend"/>
+    <Button
+        android:id="@+id/veritybutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verify"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:onClick="verifyOtp"
+        android:layout_below="@+id/code"
+        android:layout_centerHorizontal="true"/>
+
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
